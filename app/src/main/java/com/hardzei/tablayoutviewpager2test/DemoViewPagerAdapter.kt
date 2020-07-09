@@ -9,13 +9,14 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 class DemoViewPagerAdapter : RecyclerView.Adapter<DemoViewPagerAdapter.EventViewHolder>() {
-    val eventList = listOf("0", "1", "2")
+    val eventList = listOf("0", "1", "2", "3")
 
     // Layout "layout_demo_viewpager2_cell.xml" will be defined later
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         EventViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.layout_demo_viewpager2_cell, parent, false))
 
     override fun getItemCount() = eventList.count()
+
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
         (holder.view as? TextView)?.also{
             it.text = "Page " + eventList.get(position)
